@@ -10,11 +10,11 @@ function App() {
     let hills = []
     for (let i = 0; i < 9; i++) {
       hills.push(
-        <MoleContainer key={i} setScore={setScore} score={score} displayMole={displayMole} />
+        <MoleContainer key={i} setScore={setScore} score={score} displayMole={displayMole} className="box" />
       )
     }
     return (
-      <div>
+      <div className='three-by-three'>
         {hills}
       </div>
     )
@@ -24,7 +24,9 @@ function App() {
     <div className="App">
       <h1>React-a-Mole!</h1>
       {score}
-      {createMoleHill()}
+      <div>
+        {createMoleHill()}
+      </div>
     </div>
   );
 }

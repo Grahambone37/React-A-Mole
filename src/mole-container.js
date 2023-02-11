@@ -1,16 +1,17 @@
 import Mole from './mole'
+import EmptySlot from './emptyslot'
 
 export default function MoleContainer(props) {
-    let moleImage;
-    if (props.displayMole === false) {
-        moleImage = './React-A-Mole-Images/molehill.png'
-    } else {
-        moleImage = './React-A-Mole-Images/mole.png'
+    let isThereMole = () => {
+        if (props.displayMole === true) {
+            return <Mole />
+        } else {
+            return <EmptySlot />
+        }
     }
     return (
-        <div>
-            <img src={moleImage} alt="moleimg"></img>
-            <Mole />
+        <div className='one'>
+            {isThereMole()}
         </div>
     )
 }

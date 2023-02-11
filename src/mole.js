@@ -1,7 +1,7 @@
 export default function Mole() {
     return (
         <div>
-            <h1>Mole</h1>
+            <img src={require("./React-A-Mole-Images/mole.png")} alt="molehill" ></img>
         </div>
     )
 }
