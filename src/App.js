@@ -10,11 +10,15 @@ function App() {
     setScore(score += 1)
   }
 
+  let biffedIt = () => {
+    setScore(score -= 1)
+  }
+
   let createMoleHill = () => {
     let hills = []
     for (let i = 0; i < 9; i++) {
       hills.push(
-        <MoleContainer key={i} handleClick={handleClick} />
+        <MoleContainer key={i} handleClick={handleClick} biffedIt={biffedIt} />
       )
     }
     return (
@@ -29,6 +33,7 @@ function App() {
       <h1>React-a-Mole!</h1>
       {score}
       {createMoleHill()}
+      <button onClick={() => setScore(0)}>Reset</button>
     </div>
   );
 }

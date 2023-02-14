@@ -14,7 +14,7 @@ export default function MoleContainer(props) {
     return (
         <div className='one'>
             {displayMole
-                ? <Mole handleClick={props.handleClick} handleClick2={handleClick2} setDisplayMole={setDisplayMole} />
+                ? <Mole handleClick={props.handleClick} handleClick2={handleClick2} setDisplayMole={setDisplayMole} biffedIt={props.biffedIt} />
                 : <EmptySlot setDisplayMole={setDisplayMole} />
             }
         </div>
