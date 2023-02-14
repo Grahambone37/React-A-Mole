@@ -5,21 +5,17 @@ import EmptySlot from './emptyslot'
 
 export default function MoleContainer(props) {
     let [displayMole, setDisplayMole] = useState(false)
-    let handleBopped = () => {
+    let handleClick = () => {
         props.score += 1
         setDisplayMole(false)
     }
-
-    let isThereMole = () => {
-        if (displayMole === true) {
-            return <Mole />
-        } else {
-            return <EmptySlot />
-        }
-    }
+    
     return (
         <div className='one'>
-            {isThereMole()}
+            {displayMole
+                ? <Mole handleClick={handleClick} />
+                : <EmptySlot />
+            }
         </div>
     )
 }
