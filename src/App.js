@@ -5,11 +5,16 @@ import MoleContainer from './mole-container';
 function App() {
   let [score, setScore] = useState(0)
 
+  let handleClick = (e) => {
+    console.log(score + 1)
+    setScore(score += 1)
+  }
+
   let createMoleHill = () => {
     let hills = []
     for (let i = 0; i < 9; i++) {
       hills.push(
-        <MoleContainer key={i} setScore={setScore} score={score} />
+        <MoleContainer key={i} handleClick={handleClick} />
       )
     }
     return (

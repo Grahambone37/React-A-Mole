@@ -5,15 +5,16 @@ import EmptySlot from './emptyslot'
 
 export default function MoleContainer(props) {
     let [displayMole, setDisplayMole] = useState(false)
-    let handleClick = (e) => {
-        props.setScore(props.score += 1)
+    //it couldn't read the state function so i made a second onclick function
+    let handleClick2 = (e) => {
+        console.log("bopped")
         setDisplayMole(false)
     }
 
     return (
         <div className='one'>
             {displayMole
-                ? <Mole handleClick={handleClick} setDisplayMole={setDisplayMole} />
+                ? <Mole handleClick={props.handleClick} handleClick2={handleClick2} setDisplayMole={setDisplayMole} />
                 : <EmptySlot setDisplayMole={setDisplayMole} />
             }
         </div>

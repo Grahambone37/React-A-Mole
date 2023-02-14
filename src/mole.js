@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import React, { useEffect } from "react"
 
 export default function Mole(props) {
     useEffect(() => {
@@ -13,8 +13,12 @@ export default function Mole(props) {
         <div >
             <img style={{ width: '100%' }}
                 src={require("./React-A-Mole-Images/mole.png")}
-                alt="molehill"
-                onClick={props.handleClick} ></img>
+                alt="mole"
+                onClick={() => {
+                    props.handleClick()
+                    props.handleClick2()
+                    }
+                } ></img>
         </div>
     )
 }
