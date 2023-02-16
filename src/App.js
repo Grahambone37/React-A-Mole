@@ -32,8 +32,10 @@ function App() {
     <div className="App">
       <h1>React-a-Mole!</h1>
       {score}
-      {createMoleHill()}
+      <div>
       <button onClick={() => setScore(0)}>Reset</button>
+      </div>
+      {createMoleHill()}
     </div>
   );
 }
